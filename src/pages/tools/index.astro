@@ -3,61 +3,58 @@ import PageLayout from '@/layouts/BaseLayout.astro'
 import ToolSection from '@/components/ToolSection.astro'
 import Button from '@/components/Button.astro'
 
-const DESIGN = [
-	{
-		name: 'Figma',
-		description: 'Design Tool',
-		href: 'https://www.figma.com/',
-		iconPath: 'figma',
-		iconBgColour: '#000001'
-	}
-]
-
-const PRODUCTIVITY = [
-	{
-		name: 'Arc',
-		description: 'Browser',
-		href: 'https://arc.net/',
-		iconPath: 'arc',
-		iconBgColour: '#414350'
-	},
-	{
-		name: 'Notion',
-		description: 'Note Taking',
-		href: 'https://www.notion.so/product',
-		iconPath: 'notion',
-		iconBgColour: '#EFEFEE'
-	},
-	{
-		name: 'Obsidian',
-		description: 'Long-form Writing',
-		href: 'https://obsidian.md/',
-		iconPath: 'obsidian',
-		iconBgColour: '#7A3EE8'
-	}
-]
-
 const DEVELOPMENT = [
 	{
-		name: 'VS Code',
+		name: 'PHP Storm',
 		description: 'IDE',
 		href: 'https://code.visualstudio.com/',
-		iconPath: 'vscode',
+		iconPath: 'phpstorm',
+		iconBgColour: '#B543F2'
+	},
+	{
+		name: 'Docker',
+		description: 'Conteneurs',
+		href: 'https://www.docker.com/',
+		iconPath: 'docker',
+		iconBgColour: '#1D63ED'
+	},
+	{
+		name: 'Gitlab',
+		description: 'Hébergement Git',
+		href: 'https://about.gitlab.com/',
+		iconPath: 'gitlab',
 		iconBgColour: '#2C2C32'
 	},
 	{
 		name: 'ChatGPT',
-		description: 'AI',
+		description: 'IA',
 		href: 'https://chat.openai.com/',
 		iconPath: 'chatgpt',
 		iconBgColour: '#06A67F'
+	}
+]
+
+const DESIGN = [
+	{
+		name: 'Figma',
+		description: 'Outil de conception orientée visuelle',
+		href: 'https://www.figma.com/',
+		iconPath: 'figma',
+		iconBgColour: '#000001'
+	},
+	{
+		name: 'Balsamiq',
+		description: 'Outil de conception orientée fonctionnelle',
+		href: 'https://balsamiq.com/',
+		iconPath: 'balsamiq',
+		iconBgColour: '#000001'
 	}
 ]
 ---
 
 <PageLayout meta={{ title: 'Home' }}>
 	<div class='w-full'>
-		<Button title='Back' href='/' style='button'>
+		<Button title='Retour' href='/' style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
@@ -75,13 +72,12 @@ const DEVELOPMENT = [
 
 		<div class='mt-5 flex w-full flex-col gap-y-10'>
 			<div>
-				<h1 class='mb-1 text-2xl font-bold'>Tools</h1>
-				<p>Tools and software I use daily</p>
+				<h1 class='mb-1 text-2xl font-bold'>Outils</h1>
+				<p>Outils et logiciels que j'utilise quotidiennement</p>
 			</div>
 
+			<ToolSection title='Dévelopment' tools={DEVELOPMENT} />
 			<ToolSection title='Design' tools={DESIGN} />
-			<ToolSection title='Productivity' tools={PRODUCTIVITY} />
-			<ToolSection title='Development' tools={DEVELOPMENT} />
 		</div>
 	</div>
 </PageLayout>
