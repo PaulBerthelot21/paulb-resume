@@ -5,32 +5,27 @@ import Card from '../components/Card.astro'
 import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import PostPreview from '@/components/blog/PostPreview.astro'
 
-import { Image } from 'astro:assets'
-import astro from '../assets/about-astro.png'
-
-import { getAllPosts, sortMDByDate } from '@/utils'
+import Smiley from "../components/Smiley.astro";
 
 const frontend = ['Angular', 'Bootstrap', 'Tailwind', 'JavaScript', 'Sylius', 'Wordpress']
 const backend = ['Symfony', 'PHP', 'Python', 'Java']
 const bdd = ['PostgresSQL', 'SQL Server', 'MySQL']
 const others = ['Git', 'Docker', 'WSL', 'Gitlab CI', 'Linux']
 
-const MAX_POSTS = 10
-const allPosts = await getAllPosts()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const birthDate = new Date('2001-12-21')
+const today = new Date()
+let ageNumber = today.getFullYear() - birthDate.getFullYear()
+const monthDiff = today.getMonth() - birthDate.getMonth()
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+	ageNumber--
+}
 ---
 
 <PageLayout meta={{ title: 'Accueil' }}>
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
-			<Image
-				src={astro}
-				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
-				loading='eager'
-			/>
+			<Smiley />
 
 			<div class='flex flex-col items-center gap-y-4'>
 				<h1 class='text-3xl font-bold'>Paul Berthelot</h1>
@@ -87,27 +82,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 
 		<Section title='A propos'>
 			<p class='text-muted-foreground'>
-				Je m'appelle Paul Berthelot, et je suis un développeur full-stack de 22 ans, passionné par
-				la création d'applications modernes et performantes. Avec une expertise dans les
-				technologies front-end et back-end, je m'efforce de concevoir des solutions efficaces et
-				optimisées pour offrir la meilleure expérience utilisateur possible. Sur ce portfolio, tu
+				Je m'appelle Paul Berthelot, et je suis un développeur full-stack de {ageNumber} ans. Sur ce portfolio, tu
 				découvriras mes projets, mes compétences techniques, et mon approche en matière de
 				développement web.
 			</p>
 		</Section>
-		<!-- {
-            allPostsByDate.length > 0 && (
-                <Section title='Posts'>
-                    <ul class='flex flex-col gap-y-2'>
-                        {allPostsByDate.map((p) => (
-                            <li class='flex flex-col gap-x-2 sm:flex-row'>
-                                <PostPreview post={p} />
-                            </li>
-                        ))}
-                    </ul>
-                </Section>
-            )
-        } -->
 
 		<Section title='Expérience'>
 			<Card
@@ -120,10 +99,8 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
+						Développement d'une application web multi-modules pour la gestion de projet et la qualité.
 					</li>
-					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
 				</ul>
 			</Card>
 			<Card
@@ -135,9 +112,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				imageClass='h-12 w-auto rounded md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>
-						Refonte et harmonisation graphique des applications développer en interne du groupement hospitalier.
-					</li>
+					<li>Refonte et harmonisation graphique des applications développer en interne du groupement hospitalier.</li>
 					<li>Création de script shell pour l'éxécution de requête SQL</li>
 					<li>Déploiement sur serveur et sur Active Directory pour les utilisateurs</li>
 				</ul>
@@ -181,8 +156,8 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Projets'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://www.google.com'
-					heading='Consectetur'
+					href=''
+					heading='Coming soon...'
 					subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit.'
 					imagePath='/src/assets/coming-soon.png'
 					altText='Example'

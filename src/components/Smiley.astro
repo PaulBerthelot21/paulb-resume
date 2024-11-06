@@ -1,0 +1,101 @@
+---
+import { cn } from '@/utils'
+
+const foregroundColor = "rgb(221 243 228)";
+const backgroundColor = "rgb(24 121 78)";
+---
+
+<style define:vars={{ foregroundColor, backgroundColor }}>
+    .face-card {
+        background-color: #FFD3B6;
+        padding: 1%;
+        border-radius: 0.25rem;
+    }
+
+    .face-card.dark {
+        background-color: #333;
+    }
+
+    .face {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #A8D5E2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .face::before {
+        content: "";
+        position: absolute;
+        top: 60px;
+        width: 75px;
+        height: 35px;
+        background: #FFB4A2;
+        border-bottom-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+        transition: 0.5s;
+    }
+
+    .face:hover::before {
+        height: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .eyes {
+        position: relative;
+        top: -15px;
+        display: flex;
+    }
+
+    .eyes .eye {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: block;
+        background: #fff;
+        margin: 0 8px;
+        border-radius: 50%;
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .eyes .eye::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background: #333333;
+        border-radius: 50%;
+    }
+</style>
+
+<!-- Thanks to Chalti -->
+<div class="face-card">
+    <div class="face">
+        <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    document.querySelector("body").addEventListener("mousemove", eyeball);
+
+    function eyeball(event) {
+        const eyes = document.querySelectorAll(".eye");
+        eyes.forEach((eye) => {
+            let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+            let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
+            let radian = Math.atan2(event.pageX - x, event.pageY - y);
+            let rot = radian * (180 / Math.PI) * -1 + 270;
+            eye.style.transform = "rotate(" + rot + "deg)";
+        });
+    }
+</script>
