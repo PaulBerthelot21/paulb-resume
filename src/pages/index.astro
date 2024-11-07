@@ -6,6 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
 import Smiley from "../components/Smiley.astro";
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
 
 const frontend = ['Angular', 'Bootstrap', 'Tailwind', 'JavaScript', 'Sylius', 'Wordpress']
 const backend = ['Symfony', 'PHP', 'Python', 'Java']
@@ -19,9 +20,12 @@ const monthDiff = today.getMonth() - birthDate.getMonth()
 if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
 	ageNumber--
 }
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<PageLayout meta={{ title: 'Accueil' }}>
+<PageLayout meta={{ title: t('index.home') }}>
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<Smiley />
@@ -38,10 +42,10 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 						<span class='relative inline-flex h-2 w-2 rounded-full bg-orange-400'></span>
 					</span>
 
-					<p class='font-medium'>Alternant en M2 chez Cordon Group</p>
+					<p class='font-medium'>{t('index.start.status')}</p>
 				</a>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Développeur Full Stack'>
+					<Label title={t('index.start.post-office')}>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'>
 							<path
 								fill='currentColor'
@@ -49,7 +53,7 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 							></path>
 						</svg>
 					</Label>
-					<Label title='Saint-Malo'>
+					<Label title={t('index.start.location')}>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'>
 							<path
 								fill='currentColor'
@@ -58,7 +62,7 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 						</svg>
 					</Label>
 					<Label
-						title='Se connecter sur Linkedin'
+						title={t('index.start.linkedin-connect')}
 						as='a'
 						href='https://www.linkedin.com/in/paul-berthelot-012198198/'
 						target='_blank'
@@ -79,80 +83,77 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 			</div>
 		</section>
 
-		<Section title='A propos'>
+		<Section title={t('index.about.title')}>
 			<p class='text-muted-foreground'>
-				Je m'appelle Paul Berthelot, et je suis un développeur full-stack de {ageNumber} ans. Sur ce portfolio, tu
-				découvriras mes projets, mes compétences techniques, et mon approche en matière de
-				développement web.
+				{t('index.about.description')}
 			</p>
 		</Section>
 
 		<Section title='Expérience'>
 			<Card
-				heading='Développeur Web Full Stack'
-				subheading='Cordon Group'
-				date='Sep 2022 - Aujourd’hui'
+				heading={t('index.experience.cordon.title')}
+				subheading={t('index.experience.cordon.company')}
+				date={t('index.experience.cordon.date')}
 				imagePath='/src/assets/cordon-group.jpg'
-				altText='Développeur Web Full Stack'
+				altText={t('index.experience.cordon.title')}
 				imageClass='h-12 w-auto rounded md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Développement d'une application web multi-modules pour la gestion de projet et la qualité.
+						{t('index.experience.cordon.task')}
 					</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Développeur Web Full Stack'
-				subheading='Groupement Hospitalier Rance-Emeraude'
-				date='4 mois'
+				heading={t('index.experience.ghre.title')}
+				subheading={t('index.experience.ghre.company')}
+				date={t('index.experience.ghre.date')}
 				imagePath='/src/assets/gh-rance-emeraude.jpg'
-				altText='Développeur Web Full Stack'
+				altText={t('index.experience.ghre.title')}
 				imageClass='h-12 w-auto rounded md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Refonte et harmonisation graphique des applications développer en interne du groupement hospitalier.</li>
-					<li>Création de script shell pour l'éxécution de requête SQL</li>
-					<li>Déploiement sur serveur et sur Active Directory pour les utilisateurs</li>
+					<li>{t('index.experience.ghre.task')}</li>
+					<li>{t('index.experience.ghre.task-two')}</li>
+					<li>{t('index.experience.ghre.task-three')}</li>
 				</ul>
 			</Card>
 		</Section>
 
-		<Section title='Éducation'>
+		<Section title={t('index.education.title')}>
 			<Card
-				heading='Manager de solutions digitales et data (Bac +5)'
-				subheading='ENI Ecole Informatique'
-				date='Aou 2024 - Nov 2025'
+				heading={t('index.education.m2.title')}
+				subheading={t('index.education.m2.school')}
+				date={t('index.education.m2.date')}
 				imagePath='/src/assets/eni.png'
-				altText='Manager de solutions digitales et data (Bac +5)'
+				altText={t('index.education.m2.title')}
 				imageClass='h-12 w-auto rounded md:-left-16'
 			/>
 			<Card
-				heading='Concepteur Développeur Application (Bac +4)'
-				subheading='ENI Ecole Informatique'
-				date='Sep 2022 - Aou 2024'
+				heading={t('index.education.m1.title')}
+				subheading={t('index.education.m1.school')}
+				date={t('index.education.m1.date')}
 				imagePath='/src/assets/eni.png'
-				altText='Concepteur Développeur Application (Bac +4)'
+				altText={t('index.education.m1.title')}
 				imageClass='h-12 w-auto rounded md:-left-16'
 			/>
 			<Card
-				heading='BTS SIO option SLAM (Bac +2)'
-				subheading='Greta Saint-Malo'
-				date='Aou 2021 - Jui 2022'
+				heading={t('index.education.bts.title')}
+				subheading={t('index.education.bts.school')}
+				date={t('index.education.bts.date')}
 				imagePath='/src/assets/greta.png'
-				altText='BTS SIO option SLAM'
+				altText={t('index.education.bts.title')}
 				imageClass='h-12 w-auto rounded md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						BTS Services Informatiques aux Organisations option Solutions Logicielles et
-						Applications Métiers (SIO SLAM)
+						{t('index.education.bts.more-info')}
 					</li>
 				</ul>
 			</Card>
 		</Section>
 
-		<Section title='Projets'>
+		<Section title={t('index.projects.title')}>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
 					href=''
@@ -173,11 +174,11 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 			</div>
 		</Section>
 
-		<Section title='Compétences'>
-			<SkillLayout title='Frontend' skills={frontend} />
-			<SkillLayout title='Backend' skills={backend} />
-			<SkillLayout title='BDD' skills={bdd} />
-			<SkillLayout title='Autres' skills={others} />
+		<Section title={t('index.skills.title')}>
+			<SkillLayout title={t('index.skills.front-end')} skills={frontend} />
+			<SkillLayout title={t('index.skills.back-end')} skills={backend} />
+			<SkillLayout title={t('index.skills.database')} skills={bdd} />
+			<SkillLayout title={t('index.skills.other')} skills={others} />
 		</Section>
 	</div>
 </PageLayout>
