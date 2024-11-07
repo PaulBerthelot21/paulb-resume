@@ -1,0 +1,20 @@
+---
+import { languages } from '../i18n/ui'
+import {getLangFromUrl, useTranslatedPath} from '../i18n/utils'
+import { Icon } from 'astro-icon/components'
+
+const lang = getLangFromUrl(Astro.url)
+const translatePath = useTranslatedPath(lang)
+const currentPath = Astro.url.pathname
+---
+
+<div class='flex gap-2'>
+	{
+		Object.entries(languages).map(([lang, label]) => (
+			<a href={translatePath(currentPath, lang)}>
+				<Icon name={lang} class='z-20 h-10 w-10 rounded-lg bg-muted p-2' />
+				{label}
+			</a>
+		))
+	}
+</div>

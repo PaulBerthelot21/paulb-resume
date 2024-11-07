@@ -1,5 +1,5 @@
 ---
-
+import LanguagePicker from "../LanguagePicker.astro";
 ---
 
 <header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
@@ -10,6 +10,7 @@
 		<a class='flex-none text-xl font-semibold' href='/' aria-label='Brand'>Paul Berthelot</a>
 
 		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
+			<LanguagePicker />
 			<button
 				id='toggleDarkMode'
 				class='relative rounded-md border border-border p-1.5 transition-all hover:bg-border'

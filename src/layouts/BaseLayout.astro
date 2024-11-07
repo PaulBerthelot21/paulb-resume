@@ -5,8 +5,8 @@ import BaseHead from '@/components/BaseHead.astro'
 import Footer from '@/components/layout/Footer.astro'
 import Header from '@/components/layout/Header.astro'
 import ThemeProvider from '@/components/ThemeProvider.astro'
-
 import { siteConfig } from '@/site-config'
+import {getLangFromUrl} from "../i18n/utils";
 
 interface Props {
 	meta: SiteMeta
@@ -15,9 +15,11 @@ interface Props {
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title }
 } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
-<html lang={siteConfig.lang} class=''>
+<html lang={lang} class=''>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>

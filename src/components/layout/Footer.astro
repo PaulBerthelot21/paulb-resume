@@ -1,4 +1,7 @@
 ---
+import {getLangFromUrl, useTranslations} from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentYear: number = new Date().getFullYear();
 ---
 
@@ -8,16 +11,7 @@ const currentYear: number = new Date().getFullYear();
 			class='flex flex-col items-center gap-y-3 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-y-0'
 		>
 			<div class='flex gap-x-4 text-sm'>
-				<!-- <a
-          class='inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
-          href='/terms'>Terms</a
-        >
-
-        <a
-          class='inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600'
-          href='/privacy'>Privacy</a
-        > -->
-				<p class=''>© {currentYear} Paul Berthelot. Tous droits réservés.</p>
+				<p class=''>© {currentYear} Paul Berthelot. {t('footer.rights')}</p>
 			</div>
 
 			<div class='flex items-center justify-between'>

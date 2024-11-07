@@ -9,10 +9,13 @@ import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
-
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.me',
+	site: 'https://paulberthelot.netlify.app/',
+	i18n: {
+		defaultLocale: 'fr',
+		locales: ['fr', 'en'],
+	},
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		tailwind({

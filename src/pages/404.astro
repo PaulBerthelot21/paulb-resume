@@ -1,19 +1,23 @@
 ---
 import PageLayout from '@/layouts/BaseLayout.astro'
 import Button from '@/components/Button.astro'
+import {getLangFromUrl, useTranslations} from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const meta = {
-	description: 'Page non trouvé',
-	title: '404'
+	description: t('404.head.description'),
+	title: t('404.head.title'),
 }
 ---
 
 <PageLayout meta={meta}>
 	<div class='px-4 py-10 text-center sm:px-6 lg:px-8'>
-		<h1 class='block text-7xl font-bold sm:text-9xl'>404</h1>
-		<p class='mt-3 text-muted-foreground'>Oups, quelque chose s'est mal passé.</p>
-		<p>Désolé, nous n'avons pas pu trouver votre page.</p>
-		<Button title='Retour à l’accueil' href='/' style='button' class='mt-5'>
+		<h1 class='block text-7xl font-bold sm:text-9xl'>{t('404.page.title')}</h1>
+		<p class='mt-3 text-muted-foreground'>{t('404.page.oops')}</p>
+		<p>{t('404.page.sorry')}</p>
+		<Button title={t('404.page.home')} href='/' style='button' class='mt-5'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'
