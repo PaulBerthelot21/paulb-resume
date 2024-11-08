@@ -1,7 +1,7 @@
 ---
 title: "Projet Example"
 description: "Un exemple de projet Angular basé sur le guide de démarrage officiel d'Angular."
-
+locale: "fr"
 publishDate: "07 November 2024"
 tags: ["angular", "typescript", "frontend"]
 ---
