@@ -2,13 +2,15 @@
 import Button from '@/components/Button.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import { getAllPosts, getUniqueTagsWithCount } from '@/utils'
-import {getLangFromUrl,useTranslations} from "../../../i18n/utils";
+import {getLangFromUrl, useTranslatedPath, useTranslations} from "../../../i18n/utils";
 
 const allPosts = await getAllPosts()
 const allTags = getUniqueTagsWithCount(allPosts)
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const backPath = translatePath('/blog');
 
 const meta = {
 	description: t('tags.head.description'),
@@ -18,7 +20,7 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class='w-full'>
-		<Button title={t('generic.back')} href='/blog' style='button'>
+		<Button title={t('generic.back')} href={backPath} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'

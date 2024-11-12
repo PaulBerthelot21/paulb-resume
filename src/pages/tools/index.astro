@@ -2,10 +2,12 @@
 import PageLayout from '@/layouts/BaseLayout.astro'
 import ToolSection from '@/components/ToolSection.astro'
 import Button from '@/components/Button.astro'
-import {getLangFromUrl,useTranslations} from "../../i18n/utils";
+import {getLangFromUrl, useTranslatedPath, useTranslations} from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const homePath = translatePath('/');
 
 const DEVELOPMENT = [
 	{
@@ -65,7 +67,7 @@ const DESIGN = [
 
 <PageLayout meta={{ title: t('tools.title') }}>
 	<div class='w-full'>
-		<Button title={t('generic.back')} href='/' style='button'>
+		<Button title={t('generic.back')} href={homePath} style='button'>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='14'

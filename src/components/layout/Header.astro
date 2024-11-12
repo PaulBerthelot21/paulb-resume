@@ -1,9 +1,13 @@
 ---
 import LanguagePicker from "../LanguagePicker.astro";
-import {useTranslations} from "../../i18n/utils";
+import {useTranslatedPath, useTranslations} from "../../i18n/utils";
 import {getLangFromUrl} from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const homePath = translatePath('/');
+const blogPath = translatePath('/blog');
+const toolsPath = translatePath('/tools');
 ---
 
 <header class='mb-12 flex w-full flex-wrap pb-3 text-sm sm:flex-nowrap sm:justify-start'>
@@ -11,17 +15,17 @@ const t = useTranslations(lang);
 		class='relative mx-auto flex w-full items-center justify-between sm:flex sm:items-center flex-col md:flex-row'
 		aria-label='global'
 	>
-		<a class='flex-none text-xl font-semibold mb-4 md:mb-0 xl:mb-0' href='/' aria-label='Brand'>Paul Berthelot</a>
+		<a class='flex-none text-xl font-semibold mb-4 md:mb-0 xl:mb-0' href={homePath} aria-label='Brand'>Paul Berthelot</a>
 
 		<div class='flex flex-row items-center justify-center gap-x-5 sm:gap-x-7'>
 			<a
-				href='/blog'
+				href={blogPath}
 				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 			>{t('header.projects')}
 			</a>
 			<a
-				href='/tools'
+				href={toolsPath}
 				class='flex-none text-[1.05rem] font-medium hover:text-foreground/75'
 				aria-label='Nav Menu Item'
 			>{t('header.tools')}
