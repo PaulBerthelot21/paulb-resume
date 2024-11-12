@@ -13,7 +13,6 @@ const currentPath = Astro.url.pathname
 		Object.entries(languages).map(([lang, label]) => (
 			<a href={translatePath(currentPath, lang)}>
 				<Icon name={lang} class='z-20 h-10 w-10 rounded-lg bg-muted p-2' />
-				{label}
 			</a>
 		))
 	}
