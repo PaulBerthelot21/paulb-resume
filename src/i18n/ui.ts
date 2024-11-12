@@ -146,7 +146,7 @@ export const ui = {
 
         'index.education.title' : 'Education',
 
-        'index.education.m2.title' : 'Manager of digital solutions and data (Bac +5)',
+        'index.education.m2.title' : 'Manager of digital and data solutions  (Bac +5)',
         'index.education.m2.school' : 'ENI Ecole Informatique',
         'index.education.m2.date' : 'Aug 2024 - Nov 2025',
 
@@ -157,8 +157,8 @@ export const ui = {
         'index.education.bts.title' : 'BTS SIO option SLAM (Bac +2)',
         'index.education.bts.school' : 'Greta Saint-Malo',
         'index.education.bts.date' : 'Aug 2021 - Jul 2022',
-        'index.education.bts.more-info' : 'BTS Services Informatiques aux Organisations option Solutions Logicielles et' +
-            ' Applications Métiers (SIO SLAM)',
+        'index.education.bts.more-info' : 'BTS Computer Services for Organizations  option Software Solutions and' +
+            ' Business Applications (SIO SLAM)',
 
         'index.projects.title' : 'Projects',
 
