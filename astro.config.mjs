@@ -9,8 +9,6 @@ import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
-import netlify from '@astrojs/netlify';
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://paulberthelot.netlify.app/',
@@ -49,6 +47,5 @@ export default defineConfig({
 	},
 
   prefetch: true,
-  output: "server",
-  adapter: netlify()
+  output: "static"
 })
