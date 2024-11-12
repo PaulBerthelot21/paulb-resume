@@ -9,38 +9,46 @@ import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
 import icon from 'astro-icon'
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://paulberthelot.netlify.app/',
-	i18n: {
-		defaultLocale: 'fr',
-		locales: ['fr', 'en'],
+  site: 'https://paulberthelot.netlify.app/',
+
+  i18n: {
+      defaultLocale: 'fr',
+      locales: ['fr', 'en'],
 	},
-	integrations: [
-		expressiveCode(expressiveCodeOptions),
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap(),
-		mdx(),
-		icon()
+
+  integrations: [
+      expressiveCode(expressiveCodeOptions),
+      tailwind({
+          applyBaseStyles: false
+      }),
+      sitemap(),
+      mdx(),
+      icon()
 	],
-	markdown: {
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-		rehypePlugins: [
-			[
-				rehypeExternalLinks,
-				{
-					target: '_blank',
-					rel: ['nofollow, noopener, noreferrer']
-				}
-			]
-		],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: ['']
-			}
-		}
+
+  markdown: {
+      remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+      rehypePlugins: [
+          [
+              rehypeExternalLinks,
+              {
+                  target: '_blank',
+                  rel: ['nofollow, noopener, noreferrer']
+              }
+          ]
+      ],
+      remarkRehype: {
+          footnoteLabelProperties: {
+              className: ['']
+          }
+      }
 	},
-	prefetch: true
+
+  prefetch: true,
+  output: "server",
+  adapter: netlify()
 })

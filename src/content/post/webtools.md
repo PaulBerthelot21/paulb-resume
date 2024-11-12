@@ -1,6 +1,6 @@
 ---
 title: "Projet WebTools"
-description: "Participation à un projet de développement web au sein du Groupement Hospitalier Rance Emeraude, pour l'optimisation des outils numériques à destination du personnel hospitalier."
+description: "Projet de développement web au sein d'un groupement hospitalier."
 publishDate: "08 November 2024"
 tags: ["html", "css", "javascript", "frontend", "oracle"]
 ---
