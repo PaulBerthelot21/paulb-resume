@@ -11,6 +11,7 @@ export const ui = {
         'generic.back' : 'Retour',
         'generic.next' : 'Suivant',
         'generic.previous' : 'Précédent',
+        'generic.table-of-contents' : 'Table des matières',
 
         'header.projects' : 'Projets',
         'header.tools' : 'Outils',
@@ -114,6 +115,7 @@ export const ui = {
         'generic.back' : 'Back',
         'generic.next' : 'Next',
         'generic.previous' : 'Previous',
+        'generic.table-of-contents' : 'Table of contents',
 
         'header.projects' : 'Projects',
         'header.tools' : 'Tools',

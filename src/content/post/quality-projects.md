@@ -11,7 +11,7 @@ Le projet **QualiWeb** est le projet principal de mon alternance, une applicatio
 
 ### Frontend
 
-Le frontend de l'application a été développé en **Angular 8** à mon arrivée, puis migré jusqu'à la version 11, avant de subir une **refonte complète** basée sur **Angular 18**.
+Le frontend de l'application a été développé en **Angular 8** à mon arrivée, puis migré jusqu'à la **version 11**, avant de subir une **refonte complète** basée sur **Angular 18**.
 
 L'application a été conçue pour être **responsive**, afin de garantir une expérience utilisateur optimale sur des écrans de bureau (16/9) ainsi que sur des tablettes (4/3). Le design suit la **charte graphique de l'entreprise**, assurant ainsi une cohérence visuelle avec les autres outils internes.
 
@@ -25,7 +25,7 @@ Le backend est développé en **Symfony 4.4** et **PHP 8.1**, permettant une ges
 
 L'application couvre une large gamme de fonctionnalités adaptées aux besoins de gestion de la qualité et des projets, notamment :
 
-- **SWOT** : Créatio et suivi des SWOT des différents site/processus.
+- **SWOT** : Création et suivi des SWOT des différents site/processus.
 - **Gestion des plaintes** : Suivi des plaintes et des actions correctives.
 - **Tableau de bord et saisie des indicateurs / objectifs / KPI** : Suivi des performances et des objectifs stratégiques.
 - **Gestion des actions** : Suivi et gestion des actions à mener dans le cadre des projets.

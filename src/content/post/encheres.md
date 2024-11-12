@@ -7,12 +7,12 @@ tags: ["project management", "java", "team", "durability"]
 
 ## Projet Enchères de Seconde Main
 
-Ce projet vise à offrir une seconde vie aux objets fonctionnels qui sont souvent jetés, en facilitant leur cession via des enchères sans transaction financière. L’objectif est de promouvoir la réutilisation et d'encourager la durabilité en prolongeant la durée de vie des produits.
+Ce projet vise à offrir une **seconde vie** aux objets fonctionnels qui sont souvent jetés, en facilitant leur cession via des enchères sans transaction financière. L’objectif est de promouvoir la **réutilisation** et d'encourager la **durabilité** en prolongeant la durée de vie des produits.
 
 ### Rôle et Équipe
-En tant que chef d'équipe, j'ai coordonné les efforts d'une équipe composée de :
-- Un développeur backend
-- Un intégrateur
+En tant que **chef d'équipe**, j'ai coordonné les efforts d'une équipe composée de :
+- Un Développeur Backend
+- Un Intégrateur
 - Un Scrum Master
 
 ### Fonctionnalités et Itérations

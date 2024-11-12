@@ -11,11 +11,11 @@ Dans le cadre de mon **BTS SIO**, j'ai effectué un stage de 4 mois au Groupemen
 
 ### Mon Rôle et Mes Contributions
 
-Mon rôle principal consistait à améliorer l'interface utilisateur (UX/UI) des applications existantes pour une cohérence visuelle et une expérience utilisateur plus fluide. Pour cela, j'ai conçu des maquettes sur Figma afin de présenter mes propositions de design et les soumettre à l'approbation des utilisateurs.
+Mon rôle principal consistait à améliorer l'interface utilisateur **(UX/UI)** des applications existantes pour une cohérence visuelle et une expérience utilisateur plus fluide. Pour cela, j'ai conçu des maquettes sur Figma afin de présenter mes propositions de design et les soumettre à l'approbation des utilisateurs.
 
-En parallèle, j'ai travaillé sur le back-end du projet avec Oracle SQL pour la gestion de la base de données. J'ai rédigé plusieurs requêtes SQL pour répondre aux besoins spécifiques des applications et automatisé certaines tâches à l'aide de scripts Shell, permettant de réduire les interventions manuelles et d'améliorer la productivité.
+En parallèle, j'ai travaillé sur le back-end du projet avec **Oracle SQL** pour la gestion de la base de données. J'ai rédigé plusieurs requêtes SQL pour répondre aux besoins spécifiques des applications et automatisé certaines tâches à l'aide de scripts Shell, permettant de réduire les interventions manuelles et d'améliorer la productivité.
 
-Enfin, j'ai rédigé une documentation complète, incluant des tutoriels pour faciliter la prise en main et la maintenance du projet.
+Enfin, j'ai rédigé une **documentation complète**, incluant des tutoriels pour faciliter la prise en main et la maintenance du projet.
 
 ### Secteurs d'Activité Couverts
 
@@ -31,11 +31,11 @@ Ces outils répondent à des besoins spécifiques de chaque service, contribuant
 
 ### Collaboration et Retour Utilisateur
 
-J'ai collaboré étroitement avec les utilisateurs finaux pour comprendre leurs attentes, récolter des retours réguliers et ajuster les fonctionnalités selon leurs besoins. Mon travail technique a été effectué de manière autonome, avec un soutien occasionnel pour le déploiement des solutions.
+J'ai collaboré étroitement avec les **utilisateurs finaux** pour comprendre leurs attentes, récolter des **retours réguliers** et ajuster les fonctionnalités selon leurs besoins. Mon travail technique a été effectué de manière autonome, avec un soutien occasionnel pour le déploiement des solutions.
 
 ### Impact du Projet
 
-Les améliorations apportées à l'interface utilisateur ont permis aux utilisateurs de gagner du temps sur la saisie de données et de mieux naviguer dans les outils, rendant ainsi leur utilisation plus intuitive. L'automatisation de certaines tâches répétitives a également permis d'optimiser les processus, améliorant la productivité des équipes hospitalières.
+Les améliorations apportées à l'interface utilisateur ont permis aux utilisateurs de **gagner du temps** sur la saisie de données et de mieux naviguer dans les outils, rendant ainsi leur utilisation plus intuitive. L'**automatisation** de certaines tâches répétitives a également permis d'optimiser les processus, améliorant la **productivité** des équipes hospitalières.
 
 ### Compétences Acquises
 
