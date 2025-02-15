@@ -4,11 +4,11 @@ import Section from '../components/Section.astro'
 import Card from '../components/Card.astro'
 import Label from '../components/Label.astro'
 import SkillLayout from '../components/SkillLayout.astro'
-import Smiley from "../components/Smiley.astro";
-import {getLangFromUrl, useTranslations} from "../i18n/utils";
+import Smiley from '../components/Smiley.astro'
+import { getLangFromUrl, useTranslations } from '../i18n/utils'
 
-const frontend = ['Angular', 'Bootstrap', 'Tailwind', 'JavaScript', 'Sylius', 'Wordpress']
-const backend = ['Symfony', 'PHP', 'Python', 'Java']
+const frontend = ['Angular', 'Bootstrap', 'Tailwind', 'JavaScript', 'Sylius', 'NextJS', 'Astro']
+const backend = ['Symfony', 'PHP', 'NestJS', 'Java', 'Python']
 const bdd = ['PostgresSQL', 'SQL Server', 'MySQL']
 const others = ['Git', 'Docker', 'WSL', 'Gitlab CI', 'Linux']
 
@@ -20,8 +20,8 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 	ageNumber--
 }
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <PageLayout meta={{ title: t('index.home') }}>
